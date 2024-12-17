@@ -1,0 +1,116 @@
+plugins {
+    id 'java-library'
+    id 'eclipse'
+    id 'idea'
+    id 'maven-publish'
+}
+
+group = 'com.openeggbert.jdotnet'
+version = '0.0.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven { url "https://jitpack.io" }
+    maven { url 'https://s01.oss.sonatype.org' }
+    gradlePluginPortal()
+    mavenLocal()
+    google()
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
+    maven { url 'https://s01.oss.sonatype.org/content/repositories/snapshots/' }
+    maven { url 'https://repo.openeggbert.com/releases/' }
+    maven { url 'https://repo.openeggbert.com/snapshots/' }
+}
+
+dependencies {
+    annotationProcessor "org.projectlombok:lombok:$lombokVersion"
+    compileOnly "org.projectlombok:lombok:$lombokVersion"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:5.10.3"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:5.10.3"
+    testImplementation 'org.mockito:mockito-core:5.5.0'
+    testImplementation 'org.mockito:mockito-junit-jupiter:3.6.0'
+    
+  annotationProcessor "org.projectlombok:lombok:$lombokVersion"
+  compileOnly "org.projectlombok:lombok:$lombokVersion"
+  testImplementation "org.junit.jupiter:junit-jupiter-api:5.10.3"
+  testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:5.10.3"
+
+ 
+                
+}
+
+sourceCompatibility = '11'
+targetCompatibility = '11'
+
+tasks.withType(JavaCompile) {
+    options.incremental = true
+    options.encoding = 'UTF-8'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+eclipse {
+    project {
+        name = 'jxna'
+    }
+}
+
+sourceSets.main.java.srcDirs = [ "src/main/java/" ]
+sourceSets.test.java.srcDirs = [ "src/test/java/" ]
+
+idea {
+    module {
+        outputDir = file('build/classes/java/main')
+        testOutputDir = file('build/classes/java/test')
+    }
+}
+
+// Include jdotnet.gwt.xml in the JAR without moving it
+jar {
+    from(sourceSets.main.allSource) {
+        include 'com/openeggbert/jdotnet.gwt.xml'
+    }
+}
+
+def credentialsProperties = new Properties()
+file("credentials.properties").withInputStream { stream ->
+    credentialsProperties.load(stream)
+}
+
+// Define sourceJar and javadocJar tasks
+task sourceJar(type: Jar) {
+    from sourceSets.main.allSource
+    archiveClassifier.set('sources')
+}
+
+task javadocJar(type: Jar) {
+    from javadoc
+    archiveClassifier.set('javadoc')
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifactId 'jxna'
+            groupId 'com.openeggbert.jdotnet'
+            from components.java
+
+            artifact sourceJar
+            artifact javadocJar
+        }
+        
+    }
+
+    repositories {
+        maven {
+            name = version.endsWith('SNAPSHOT') ? 'openeggbert-snapshots' : 'openeggbert-releases'
+            url = version.endsWith('SNAPSHOT') ? uri("https://repo.openeggbert.com/snapshots") : uri("https://repo.openeggbert.com/releases")
+
+            credentials {
+                username = credentialsProperties['repoUsername']
+                password = credentialsProperties['repoPassword']
+            }
+        }
+    }
+}
