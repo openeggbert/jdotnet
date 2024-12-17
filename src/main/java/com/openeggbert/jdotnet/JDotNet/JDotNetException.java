@@ -2,9 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.openeggbert.jdotnet.System;
+package com.openeggbert.jdotnet.JDotNet;
 
-import com.openeggbert.jdotnet.JDotNet.JDotNetException;
+import com.openeggbert.jdotnet.System.*;
 import lombok.AllArgsConstructor;
 
 /**
@@ -12,8 +12,8 @@ import lombok.AllArgsConstructor;
  * @author robertvokac
  */
 @AllArgsConstructor
-public class Exception_ extends JDotNetException {
-    public Exception_(String msg) {
+public class JDotNetException extends RuntimeException {
+    public JDotNetException(String msg) {
         super(msg);
     }
     

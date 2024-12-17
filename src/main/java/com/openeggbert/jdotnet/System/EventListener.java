@@ -4,15 +4,15 @@
  */
 package com.openeggbert.jdotnet.System;
 
+import com.openeggbert.jdotnet.JDotNet.AdditionalClassForDotNetSimulation;
+
 /**
  *
  * @author robertvokac
  */
-public interface EventHandler<T> {
+@AdditionalClassForDotNetSimulation
+public interface EventListener<T>{
     
-    void addEventListener(EventListener<T> listener);
-    void removeEventListener(EventListener<T> listener);
-    void invoke(T eventArgs);
-
+    void onEventHappened(T eventArgs);
     
 }

@@ -4,18 +4,22 @@
  */
 package com.openeggbert.jdotnet.System.Globalization;
 
+import com.openeggbert.jdotnet.System.IFormatProvider;
 import lombok.Getter;
 
 /**
  *
  * @author robertvokac
  */
-public class CultureInfo {
+public class CultureInfo implements IFormatProvider {
     public static CultureInfo getCurrentCulture() {
         //todo
         return null;
     }
     @Getter
     private String TwoLetterISOLanguageName;
-    
+    public static final CultureInfo InvariantCulture = new CultureInfo();//todo
+//    public String ToString(StringBuilder sb, int number) {
+//        
+//    }
 }

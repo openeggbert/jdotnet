@@ -8,11 +8,7 @@ package com.openeggbert.jdotnet.System;
  *
  * @author robertvokac
  */
-public interface EventHandler<T> {
-    
-    void addEventListener(EventListener<T> listener);
-    void removeEventListener(EventListener<T> listener);
-    void invoke(T eventArgs);
-
-    
+public class TimeSpan {
+    public static TimeSpan FromTicks(long ticks) {return null;}
+    public static TimeSpan FromSeconds(double seconds) {return null;}
 }

@@ -15,16 +15,23 @@ import java.util.List;
 @AdditionalClassForDotNetSimulation
 public class EventHandlerImpl<T> implements EventHandler<T> {
 
-    private final List<ValueChangedListener<T>> list = new ArrayList<>();
+    private final List<EventListener<T>> list = new ArrayList<>();
     
     @Override
-    public void addValueChangedListener(ValueChangedListener<T> listener) {
+    public void addEventListener(EventListener<T> listener) {
         list.add(listener);
     }
 
     @Override
-    public void removeValueChangedListener(ValueChangedListener<T> listener) {
+    public void removeEventListener(EventListener<T> listener) {
         list.remove(listener);
+    }
+
+    @Override
+    public void invoke(T eventArgs) {
+        for(EventListener<T> e : list) {
+            e.onEventHappened(eventArgs);
+        }
     }
     
 }

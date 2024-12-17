@@ -8,6 +8,18 @@ package com.openeggbert.jdotnet.System.Text;
  *
  * @author robertvokac
  */
-public class NewClass {
-    
+public class Encoding {
+
+    public static final Encoding UTF8 = new Encoding();//todo
+
+    public String GetString(byte[] bytes, int index, int count) {
+        return "";
+        //todo
+    }
+
+    public byte[] GetBytes(String s) {
+        return null;
+        //todo
+    }
+
 }

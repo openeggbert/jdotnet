@@ -4,15 +4,10 @@
  */
 package com.openeggbert.jdotnet.System;
 
-import com.openeggbert.jdotnet.JDotNet.AdditionalClassForDotNetSimulation;
-
 /**
  *
  * @author robertvokac
  */
-@AdditionalClassForDotNetSimulation
-public interface ValueChangedListener<T>{
-    
-    void onValueChanged(T eventArgs);
+public interface IFormatProvider {
     
 }
