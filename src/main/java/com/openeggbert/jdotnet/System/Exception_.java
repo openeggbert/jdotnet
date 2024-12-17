@@ -4,18 +4,16 @@
  */
 package com.openeggbert.jdotnet.System;
 
-import com.openeggbert.jdotnet.JDotNet.AdditionalClassForDotNetSimulation;
+import lombok.AllArgsConstructor;
 
 /**
  *
  * @author robertvokac
  */
-
-@AdditionalClassForDotNetSimulation
-public abstract class Struct<T> {
-    public abstract T copy();
-    /**
-     * Sets this class to its default values.
-     */
-    public abstract T reset();
+@AllArgsConstructor
+public class Exception_ extends RuntimeException {
+    public Exception_(String msg) {
+        super(msg);
+    }
+    
 }

@@ -8,6 +8,12 @@ package com.openeggbert.jdotnet.System;
  *
  * @author robertvokac
  */
-public class NetException extends RuntimeException {
+public class String_ {
+    private String_() {
+        //Not meant to be instantiated.
+    }
+    public static boolean IsNullOrEmpty(String string) {
+        return string == null || string.isEmpty();
+    }
     
 }
