@@ -52,7 +52,7 @@ test {
 
 eclipse {
     project {
-        name = 'jxna'
+        name = 'jdotnet'
     }
 }
 
@@ -92,7 +92,7 @@ task javadocJar(type: Jar) {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            artifactId 'jxna'
+            artifactId 'jdotnet'
             groupId 'com.openeggbert.jdotnet'
             from components.java
 
