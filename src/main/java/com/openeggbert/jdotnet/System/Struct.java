@@ -4,6 +4,8 @@
  */
 package com.openeggbert.jdotnet.System;
 
+import com.openeggbert.jdotnet.JDotNet.AdditionalClassForDotNetSimulation;
+
 /**
  *
  * @author robertvokac

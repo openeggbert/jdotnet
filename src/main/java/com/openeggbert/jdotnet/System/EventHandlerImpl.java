@@ -4,6 +4,7 @@
  */
 package com.openeggbert.jdotnet.System;
 
+import com.openeggbert.jdotnet.JDotNet.AdditionalClassForDotNetSimulation;
 import java.util.ArrayList;
 import java.util.List;
 

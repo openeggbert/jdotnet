@@ -4,6 +4,7 @@
  */
 package com.openeggbert.jdotnet.System;
 
+import com.openeggbert.jdotnet.JDotNet.AdditionalClassForDotNetSimulation;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
