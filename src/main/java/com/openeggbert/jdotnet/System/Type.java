@@ -4,14 +4,20 @@
  */
 package com.openeggbert.jdotnet.System;
 
+import com.openeggbert.jdotnet.System.Reflection.Assembly;
+
 /**
  *
  * @author robertvokac
  */
-public class string extends String_ {
-
-    public string(char ch, int times) {
-        super(ch, times);
+public class Type {
+    public Assembly Assembly() {
+        return null;
+    //todo
     }
-
+    public static Type typeof(Class clazz) {
+        return null;
+        //todo
+    }
+    
 }

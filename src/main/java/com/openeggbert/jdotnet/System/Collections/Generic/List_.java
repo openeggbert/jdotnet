@@ -4,6 +4,7 @@
  */
 package com.openeggbert.jdotnet.System.Collections.Generic;
 
+import com.openeggbert.jdotnet.System.IO.Stream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -55,6 +56,20 @@ public class List_<T> implements Iterable<T> {
 
     public boolean Contains(T o) {
         return internalList.contains(o);
+    }
+
+    public boolean Any() {
+        return !internalList.isEmpty();
+    }
+
+    public void RemoveAt(int i) {
+        internalList.remove(i);
+    }
+    public int Count() {
+        return internalList.size();
+    }
+    public java.util.stream.Stream<T> stream() {
+        return internalList.stream();
     }
 
 }

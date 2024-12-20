@@ -13,12 +13,12 @@ import java.lang.annotation.Target;
 /**
  *
  * @author robertvokac
- * Simulates the C# key word namespace.
+ * Simulates the C# key word ref.
  */
 
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.TYPE)
+@Target(ElementType.PARAMETER)
 @AdditionalClassForDotNetSimulation
-public @interface Namespace {
-    String name();
+public @interface ref {
+    String description() default "";
 }

@@ -13,12 +13,12 @@ import java.lang.annotation.Target;
 /**
  *
  * @author robertvokac
- * Simulates the C# key word event.
+ * Simulates the C# key word internal.
  */
 
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.TYPE)
+@Target({ElementType.TYPE, ElementType.METHOD, ElementType.FIELD, ElementType.CONSTRUCTOR})
 @AdditionalClassForDotNetSimulation
-public @interface StaticClass {
+public @interface internal {
     String description() default "";
 }

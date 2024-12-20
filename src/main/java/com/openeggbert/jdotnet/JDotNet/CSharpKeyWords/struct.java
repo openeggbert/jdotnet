@@ -4,19 +4,18 @@
  */
 package com.openeggbert.jdotnet.JDotNet.CSharpKeyWords;
 
+import com.openeggbert.jdotnet.JDotNet.AdditionalClassForDotNetSimulation;
+
 /**
  *
  * @author robertvokac
  */
-public class Default_ {
 
-    private Default_() {
-        //Not meant to be instantiated.
-    }
-
-    public static <T extends Struct<T>> T default_(T instance) {
-        instance.reset();
-        return instance;
-    }
-
+@AdditionalClassForDotNetSimulation
+public abstract class struct<T> {
+    public abstract T copy();
+    /**
+     * Sets this class to its default values.
+     */
+    public abstract T reset();
 }

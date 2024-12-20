@@ -8,10 +8,10 @@ package com.openeggbert.jdotnet.System;
  *
  * @author robertvokac
  */
-public class string extends String_ {
+class bool extends Boolean {
 
-    public string(char ch, int times) {
-        super(ch, times);
+    public static bool of(boolean b) {
+        return (bool) of(b);
     }
 
 }

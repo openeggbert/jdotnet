@@ -13,12 +13,12 @@ import java.lang.annotation.Target;
 /**
  *
  * @author robertvokac
- * Simulates the C# key word const.
+ * Simulates the C# key word event.
  */
 
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.FIELD)
+@Target(ElementType.TYPE)
 @AdditionalClassForDotNetSimulation
-public @interface Const {
+public @interface static_ {
     String description() default "";
 }

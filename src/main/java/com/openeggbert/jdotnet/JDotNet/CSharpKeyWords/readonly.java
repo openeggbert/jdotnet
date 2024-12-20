@@ -13,12 +13,12 @@ import java.lang.annotation.Target;
 /**
  *
  * @author robertvokac
- * Simulates the C# key word ref.
+ * Simulates the C# key word readonly.
  */
 
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.PARAMETER)
+@Target({ElementType.TYPE_USE, ElementType.FIELD})
 @AdditionalClassForDotNetSimulation
-public @interface Ref {
+public @interface readonly {
     String description() default "";
 }

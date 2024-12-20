@@ -4,7 +4,7 @@
  */
 package com.openeggbert.jdotnet.System;
 
-import com.openeggbert.jdotnet.JDotNet.CSharpKeyWords.Struct;
+import com.openeggbert.jdotnet.JDotNet.CSharpKeyWords.struct;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
  */
 @AllArgsConstructor
 @NoArgsConstructor
-public class TimeSpan extends Struct<TimeSpan> {
+public class TimeSpan extends struct<TimeSpan> {
     public static TimeSpan FromTicks(long ticks) {return null;}
     public static TimeSpan FromSeconds(double seconds) {return null;}
     private long _ticks;

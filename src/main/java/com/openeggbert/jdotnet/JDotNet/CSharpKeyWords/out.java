@@ -13,12 +13,12 @@ import java.lang.annotation.Target;
 /**
  *
  * @author robertvokac
- * Simulates the C# key word readonly.
+ * Simulates the C# key word out.
  */
 
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.FIELD)
+@Target(ElementType.PARAMETER)
 @AdditionalClassForDotNetSimulation
-public @interface Readonly {
+public @interface out {
     String description() default "";
 }
