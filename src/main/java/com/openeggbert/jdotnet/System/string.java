@@ -4,12 +4,12 @@
  */
 package com.openeggbert.jdotnet.System;
 
+
 /**
  *
  * @author robertvokac
  */
-public interface IDisposable {
-
-    void Dispose();
-
+public class string extends String_ {
+    
+   
 }

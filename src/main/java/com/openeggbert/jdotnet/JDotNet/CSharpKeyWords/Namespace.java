@@ -13,12 +13,12 @@ import java.lang.annotation.Target;
 /**
  *
  * @author robertvokac
- * Simulates the C# key word default.
+ * Simulates the C# key word namespace.
  */
 
 @Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.LOCAL_VARIABLE)
+@Target(ElementType.TYPE)
 @AdditionalClassForDotNetSimulation
-public @interface Default {
-    String description() default "";
+public @interface Namespace {
+    String name();
 }

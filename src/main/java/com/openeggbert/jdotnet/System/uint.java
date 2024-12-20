@@ -4,12 +4,14 @@
  */
 package com.openeggbert.jdotnet.System;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import lombok.Getter;
+
 /**
  *
  * @author robertvokac
  */
-public interface IDisposable {
-
-    void Dispose();
-
+public class uint extends UInt32 {
+ 
 }
